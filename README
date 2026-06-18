@@ -1,3 +1,9 @@
 ## Setup
 1. Launch containers: `docker compose up -d`
 2. Pull the Ollama LLM models from the internet: `./scripts/pull_models.sh`
+
+## TODOs
+- FastAPI for ingest & query
+- FastMCP for tools
+- LangChain + Milvus as an alternative
+- nginx frontend
