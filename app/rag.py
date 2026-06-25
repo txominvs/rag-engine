@@ -20,14 +20,15 @@ def query_rag(question: str) -> str:
 
     llm_response = ollama_client.chat(
         model="phi3:3.8b",
+        options={"temperature": 0},
         messages=
         [
             {
                 "role": "user",
-                "content": f"""Answer the question using ONLY the information from the context below.
-If the answer is not present in the context, simply say "I don't know".
+                "content": f"""Extract the exact answer verbatim from the text.
+If not present, return "NOT FOUND".
 
-Context: {' '.join(documents)}
+Text: {context}
 Question: {question}
 Answer:"""
             }
@@ -37,4 +38,5 @@ Answer:"""
     return llm_response
 
 if __name__ == "__main__":
-    print( "Reply = ", query_rag("What does the fox jump over?") )
+    while user_input := input("Question?"):
+        print( "Reply = ", query_rag(user_input) )
