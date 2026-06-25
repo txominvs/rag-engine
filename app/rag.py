@@ -19,7 +19,7 @@ def query_rag(question: str) -> str:
     print(f"{context = }")
 
     llm_response = ollama_client.chat(
-        model="llama3.2:1b",
+        model="phi3:3.8b",
         messages=
         [
             {
