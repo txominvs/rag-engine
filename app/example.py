@@ -33,8 +33,8 @@ chroma_collection.add(
 
 # Sample retrival from DB
 documents = chroma_collection.query(
-    query_embeddings=embedding_response,
+    query_embeddings=[embedding_response],
     n_results=1
-)["documents"]
+)["documents"][0]
 
 print(documents)

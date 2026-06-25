@@ -7,7 +7,8 @@ def ingest_texts(texts: list[str]) -> None:
     new_texts=[]
 
     for text in texts:
-        # generate has of text using SHA256
+        text = text.strip()
+        
         hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
 
         existing = chroma_collection.get(ids=hash)['ids']
@@ -18,6 +19,7 @@ def ingest_texts(texts: list[str]) -> None:
                 model="nomic-embed-text",
                 prompt=text
             ).embedding
+
             new_ids.append(hash)
             new_embeddings.append(embedding)
             new_texts.append(text)
