@@ -32,6 +32,9 @@ services:
     depends_on:
       - ollama
       - chromadb
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+      - CHROMA_HOST=chromadb
 
 volumes:
   ollama_data:

@@ -9,3 +9,4 @@
 - FastMCP for tools
 - Milvus as an alternative vectorDB
 - nginx frontend
+- Reranker & Hybrid Search (BM25)
