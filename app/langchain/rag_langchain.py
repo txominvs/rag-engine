@@ -1,4 +1,4 @@
-from clients_langchain import OLLAMA_HOST, vectorstore
+from .clients_langchain import OLLAMA_HOST, vectorstore
 
 from langchain_ollama import ChatOllama
 
@@ -41,7 +41,8 @@ chain = (
     | StrOutputParser()
 )
 
-print(chain.invoke("How many people live in Paris?"))
+def query_rag_langchain(question: str) -> str:
+    return chain.invoke(question)
 
 ####
 # EMBEDDINGS ARE NOT COMPATIBLE: Ollama normalizes embeddings

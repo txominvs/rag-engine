@@ -1,4 +1,4 @@
-from clients import ollama_client, chroma_collection
+from .clients import ollama_client, chroma_collection
 
 def query_rag(question: str) -> str:
 

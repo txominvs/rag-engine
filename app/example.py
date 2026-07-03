@@ -1,4 +1,4 @@
-from clients import ollama_client, chroma_collection
+from vanilla.clients import ollama_client, chroma_collection
 
 # Sample LLM query
 llm_response = ollama_client.chat(

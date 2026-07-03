@@ -1,4 +1,4 @@
-from clients import ollama_client, chroma_collection
+from .clients import ollama_client, chroma_collection
 import hashlib
 
 def ingest_texts(texts: list[str]) -> None:

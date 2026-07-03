@@ -1,4 +1,4 @@
-from clients_langchain import vectorstore
+from .clients_langchain import vectorstore
 
 def ingest_texts_langchain(texts: list[str]) -> None:
     vectorstore.add_texts(texts)
